@@ -1,0 +1,13 @@
+@use "../abstracts/tokens";
+
+@keyframes morph {
+  to {
+    border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+    transform: translate(-60px, 40px) rotate(40deg);
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

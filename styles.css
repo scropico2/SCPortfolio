@@ -129,6 +129,17 @@ p {
   color: var(--accent);
 }
 
+@keyframes morph {
+  to {
+    border-radius: 60% 40% 40% 60%/40% 60% 40% 60%;
+    transform: translate(-60px, 40px) rotate(40deg);
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 .header {
   display: flex;
   min-width: 1200px;
@@ -187,4 +198,81 @@ p {
 .nav__link:hover {
   color: var(--accent);
   transform: translateY(-3px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 80px 24px 0px;
+}
+.hero__circle {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+  width: 520px;
+  top: 10%;
+  right: -80px;
+  aspect-ratio: 2;
+  border-radius: 46% 54% 60% 40%/50% 40% 60% 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  z-index: -1;
+  animation: morph 14s ease-in-out infinite alternate;
+}
+.hero__accentText {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent);
+  display: inline-flex;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+}
+.hero__title {
+  display: block;
+  max-width: 14ch;
+  margin-bottom: 24px;
+  padding: 4px 10px;
+}
+.hero__gradient {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2), var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 10s linear infinite;
+}
+.hero__text {
+  padding: 20px 10px;
+  display: block;
+  max-width: 800px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 4px 10px;
+}
+.cta__button {
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid transparent var(--line);
+  box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta__button:hover, .cta__button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px var(--accent);
+}
+.cta__button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.35);
 }/*# sourceMappingURL=styles.css.map */
