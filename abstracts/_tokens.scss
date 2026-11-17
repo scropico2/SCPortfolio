@@ -35,14 +35,3 @@
     --text-h2: 3.2rem;
   }
 }
-
-/* Dark mode: only these values change */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0e11;
-    --surface: #17171c;
-    --text: #f2f1ed;
-    --muted: #9a9aa6;
-    --line: #2a2a32;
-  }
-}

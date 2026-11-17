@@ -32,16 +32,6 @@
     --text-h2: 3.2rem;
   }
 }
-/* Dark mode: only these values change */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0e11;
-    --surface: #17171c;
-    --text: #f2f1ed;
-    --muted: #9a9aa6;
-    --line: #2a2a32;
-  }
-}
 *,
 *::before,
 *::after {
@@ -137,4 +127,64 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--accent);
+}
+
+.header {
+  display: flex;
+  min-width: 1200px;
+  justify-content: space-between;
+  padding: 12px 20px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.header__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.header__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.header__title {
+  display: inline;
+  font-size: 24px;
+  padding: 4px 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.dotMarked {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.nav__link {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--muted);
+  padding: 4px 10px;
+  transition: 0.2s ease, transform 0.2s ease;
+}
+.nav__link:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
 }/*# sourceMappingURL=styles.css.map */
