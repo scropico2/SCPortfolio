@@ -140,6 +140,14 @@ p {
     background-position: 200% center;
   }
 }
+@keyframes movingLine {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .header {
   display: flex;
   min-width: 1200px;
@@ -275,4 +283,35 @@ p {
 .cta__button:active {
   transform: translateY(0);
   box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.35);
+}
+
+.movingLine {
+  margin-top: 120px;
+  overflow: hidden;
+}
+.movingLine__track {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  gap: 40px;
+  width: -moz-max-content;
+  width: max-content;
+  animation: movingLine 15s linear infinite;
+}
+.movingLine__element {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  white-space: nowrap;
+  width: -moz-max-content;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.movingLine {
+  display: flex;
 }/*# sourceMappingURL=styles.css.map */

@@ -84,3 +84,29 @@
     }
   }
 }
+
+.movingLine {
+  margin-top: 120px;
+  overflow: hidden;
+
+  &__track {
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    gap: 40px;
+    width: max-content;
+    animation: movingLine 15s linear infinite;
+  }
+  &__element {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    white-space: nowrap;
+    width: max-content;
+    flex-shrink: 0;
+  }
+}
